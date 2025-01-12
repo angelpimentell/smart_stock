@@ -19,6 +19,7 @@ class StockResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+
     public static function form(Form $form): Form
     {
         return $form
@@ -33,10 +34,6 @@ class StockResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('quantity')
                     ->label('Quantity')
-                    ->numeric()
-                    ->required(),
-                Forms\Components\TextInput::make('difference')
-                    ->label('Difference')
                     ->numeric()
                     ->required(),
             ]);
@@ -61,7 +58,7 @@ class StockResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])->defaultSort('created_at', 'desc');
     }
 
     public static function getRelations(): array
