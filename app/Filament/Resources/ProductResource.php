@@ -23,7 +23,18 @@ class ProductResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name'),
+                Forms\Components\TextInput::make('name')
+                    ->label('Name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Textarea::make('description')
+                    ->label('Description')
+                    ->nullable(),
+                Forms\Components\Select::make('category_id')
+                    ->label('Category')
+                    ->relationship('category', 'name')
+                    ->required()
+                    ->searchable(),
             ]);
     }
 
