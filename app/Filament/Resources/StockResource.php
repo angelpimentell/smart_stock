@@ -47,6 +47,7 @@ class StockResource extends Resource
                 Tables\Columns\TextColumn::make('unit.name')->label('Measurement Unit')->sortable(),
                 Tables\Columns\TextColumn::make('quantity')->label('Quantity'),
                 Tables\Columns\TextColumn::make('difference')->label('Difference'),
+                Tables\Columns\TextColumn::make('created_at')->label('Creation Date'),
             ])
             ->filters([
                 //
