@@ -36,6 +36,9 @@ class StockResource extends Resource
                     ->label('Quantity')
                     ->numeric()
                     ->required(),
+                Forms\Components\DatePicker::make('date')
+                    ->label('Date')
+                    ->required(),
             ]);
     }
 
@@ -47,7 +50,7 @@ class StockResource extends Resource
                 Tables\Columns\TextColumn::make('unit.name')->label('Measurement Unit')->sortable(),
                 Tables\Columns\TextColumn::make('quantity')->label('Quantity'),
                 Tables\Columns\TextColumn::make('difference')->label('Difference'),
-                Tables\Columns\TextColumn::make('created_at')->label('Creation Date'),
+                Tables\Columns\TextColumn::make('date')->label('Creation Date'),
             ])
             ->filters([
                 //
@@ -59,7 +62,7 @@ class StockResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ])->defaultSort('created_at', 'desc');
+            ])->defaultSort('date', 'desc');
     }
 
     public static function getRelations(): array
