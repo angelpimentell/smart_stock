@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\MeasurementUnit;
 use App\Models\Product;
+use App\Models\Stock;
 use App\Models\User;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -76,6 +77,31 @@ class DatabaseSeeder extends Seeder
             MeasurementUnit::create($measurementUnit);
         }
 
+
+        /* ------------------------ */
+
+        $stocks = [
+            ['product_id' => 1, 'unit_id' => 1, 'quantity' => 50],
+            ['product_id' => 1, 'unit_id' => 2, 'quantity' => 30],
+            ['product_id' => 1, 'unit_id' => 3, 'quantity' => 20],
+            ['product_id' => 2, 'unit_id' => 1, 'quantity' => 40],
+            ['product_id' => 2, 'unit_id' => 2, 'quantity' => 25],
+            ['product_id' => 3, 'unit_id' => 1, 'quantity' => 60],
+            ['product_id' => 3, 'unit_id' => 3, 'quantity' => 15],
+            ['product_id' => 4, 'unit_id' => 2, 'quantity' => 35],
+            ['product_id' => 4, 'unit_id' => 3, 'quantity' => 10],
+            ['product_id' => 5, 'unit_id' => 1, 'quantity' => 45],
+            ['product_id' => 5, 'unit_id' => 2, 'quantity' => 20],
+            ['product_id' => 6, 'unit_id' => 3, 'quantity' => 55],
+            ['product_id' => 7, 'unit_id' => 1, 'quantity' => 70],
+            ['product_id' => 8, 'unit_id' => 2, 'quantity' => 65],
+            ['product_id' => 9, 'unit_id' => 3, 'quantity' => 50],
+            ['product_id' => 10, 'unit_id' => 1, 'quantity' => 80],
+        ];
+
+        foreach ($stocks as $stock) {
+            Stock::create($stock);
+        }
     }
 
 
