@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\LessStockProductsResource\Widgets\LessStockProducts;
+use App\Filament\Resources\LowStockProductResource\Widgets\LowStockProducts;
 use App\Filament\Resources\ProductResource\Widgets\StatsOverview;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -40,7 +42,9 @@ class StockPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
-                StatsOverview::class
+                StatsOverview::class,
+                LowStockProducts::class,
+                LessStockProducts::class
             ])
             ->middleware([
                 EncryptCookies::class,
