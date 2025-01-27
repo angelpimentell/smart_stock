@@ -41,11 +41,11 @@ class DatabaseSeeder extends Seeder
         // Electronics
         $products = [
             // Sports
-            ["id" => 1, 'name' => 'Wilson Tennis Racket', 'description' => 'A high-quality racket for professional and casual players.', 'category_id' => Category::where('name', 'Sports')->first()->id],
-            ["id" => 2, 'name' => 'Adidas Soccer Ball', 'description' => 'Durable soccer ball for all-weather play.', 'category_id' => Category::where('name', 'Sports')->first()->id],
+            ["id" => 1, 'name' => 'Toilet Paper', 'description' => 'A high-quality racket for professional and casual players.', 'category_id' => Category::where('name', 'Sports')->first()->id],
+            ["id" => 2, 'name' => 'Brugal', 'description' => 'Durable soccer ball for all-weather play.', 'category_id' => Category::where('name', 'Sports')->first()->id],
 
             // Beauty
-            ["id" => 3, 'name' => 'Maybelline Lipstick', 'description' => 'Long-lasting matte lipstick in vibrant colors.', 'category_id' => Category::where('name', 'Beauty')->first()->id],
+            ["id" => 3, 'name' => 'Winasorb Ultra', 'description' => 'Long-lasting matte lipstick in vibrant colors.', 'category_id' => Category::where('name', 'Beauty')->first()->id],
             ["id" => 4, 'name' => 'L’Oreal Shampoo', 'description' => 'Nourishing shampoo for healthy, shiny hair.', 'category_id' => Category::where('name', 'Beauty')->first()->id],
 
             // Automotive
