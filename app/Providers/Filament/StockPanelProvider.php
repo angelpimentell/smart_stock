@@ -2,6 +2,10 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\FutureProductStockResource\Widgets\FutureProductStockChart;
+use App\Filament\Resources\LessStockProductsResource\Widgets\LessStockProducts;
+use App\Filament\Resources\LowStockProductResource\Widgets\LowStockProducts;
+use App\Filament\Resources\ProductResource\Widgets\StatsOverview;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -37,8 +41,12 @@ class StockPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+//                Widgets\AccountWidget::class,
+//                Widgets\FilamentInfoWidget::class,
+                StatsOverview::class,
+                FutureProductStockChart::class,
+                LowStockProducts::class,
+                LessStockProducts::class,
             ])
             ->middleware([
                 EncryptCookies::class,
